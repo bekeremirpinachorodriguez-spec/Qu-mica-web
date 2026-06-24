@@ -1,1 +1,297 @@
-css/estilos.css 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #2d3748;
+}
+
+/* ENCABEZADO */
+header {
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* NAVEGACIÓN */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 0.6rem 1.4rem;
+    border: 2px solid #0f3460;
+    background: white;
+    color: #0f3460;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: #0f3460;
+    color: white;
+}
+
+.nav-btn.activo {
+    background: #0f3460;
+    color: white;
+}
+
+/* SECCIONES */
+.seccion {
+    display: none;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.seccion.activa {
+    display: block;
+}
+
+.seccion h2 {
+    font-size: 1.6rem;
+    color: #0f3460;
+    margin-bottom: 0.5rem;
+}
+
+.descripcion {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* MODO */
+.modo-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.modo-btn {
+    padding: 0.5rem 1.2rem;
+    border: 2px solid #5eead4;
+    background: white;
+    color: #0f3460;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.modo-btn.activo {
+    background: #5eead4;
+    color: #0f3460;
+    font-weight: 600;
+}
+
+/* TARJETA */
+.ejercicio-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+}
+
+/* PREGUNTA */
+.pregunta-box {
+    text-align: center;
+    background: #f0f4f8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pregunta-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.formula-grande {
+    font-size: 2.5rem;
+    color: #0f3460;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* RESPUESTAS */
+.respuestas-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.respuesta-item label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0f3460;
+    margin-bottom: 0.4rem;
+}
+
+.respuesta-item input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.respuesta-item input:focus {
+    border-color: #5eead4;
+}
+
+/* BOTONES */
+.botones {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.btn-verificar, .btn-nuevo, .btn-ayuda {
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-verificar {
+    background: #0f3460;
+    color: white;
+}
+
+.btn-verificar:hover { background: #1a4a7a; }
+
+.btn-nuevo {
+    background: #5eead4;
+    color: #0f3460;
+}
+
+.btn-nuevo:hover { background: #3dd6bc; }
+
+.btn-ayuda {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.btn-ayuda:hover { background: #fde68a; }
+
+/* RESULTADO */
+.resultado {
+    display: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    white-space: pre-wrap;
+}
+
+.resultado.correcto {
+    display: block;
+    background: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #10b981;
+}
+
+.resultado.incorrecto {
+    display: block;
+    background: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid #ef4444;
+}
+
+.resultado.parcial {
+    display: block;
+    background: #fef3c7;
+    color: #92400e;
+    border-left: 4px solid #f59e0b;
+}
+
+/* CAJAS DE AYUDA */
+.caja-azul {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #eff6ff;
+    border-radius: 10px;
+    border-left: 4px solid #3b82f6;
+}
+
+.caja-azul h4 {
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+}
+
+.caja-azul p {
+    font-size: 0.9rem;
+    color: #1e3a8a;
+    margin-bottom: 0.3rem;
+}
+
+.caja-verde {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f0fdf4;
+    border-radius: 10px;
+    border-left: 4px solid #10b981;
+}
+
+.caja-verde h4 {
+    color: #065f46;
+    margin-bottom: 0.5rem;
+}
+
+.caja-verde pre {
+    font-family: inherit;
+    font-size: 0.88rem;
+    color: #065f46;
+    white-space: pre-wrap;
+    line-height: 1.7;
+}
+
+/* CONTADOR */
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-size: 0.95rem;
+}
